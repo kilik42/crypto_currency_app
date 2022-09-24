@@ -7,14 +7,34 @@
 
 import SwiftUI
 
-struct TopMoverItemsView: View {
+struct TopMoverItemView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            //image
+            Image(systemName: "bitcoinsign.circle.,fill")
+                .resizable()
+                .frame(width:32, height: 32)
+                .foregroundColor(.orange)
+            
+            //coin info
+            HStack{
+                Text("BTC")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                
+                Text("$20,330.00")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            
+            
+            //coin percent change
+        }
     }
 }
 
-struct TopMoverItemsView_Previews: PreviewProvider {
+struct TopMoverItemView_Previews: PreviewProvider {
     static var previews: some View {
-        TopMoverItemsView()
+        TopMoverItemView()
     }
 }
