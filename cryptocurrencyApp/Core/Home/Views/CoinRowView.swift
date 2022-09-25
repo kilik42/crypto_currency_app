@@ -55,6 +55,16 @@ struct CoinRowView: View {
             
         }
         .padding(.horizontal)
+        .padding(.vertical, 4)
+        
+        
+        ScrollView{
+            VStack{
+                ForEach(0 .. < 50, id: \.self){
+                    CoinRowView()
+                }
+            }
+        }
     }
 }
 
