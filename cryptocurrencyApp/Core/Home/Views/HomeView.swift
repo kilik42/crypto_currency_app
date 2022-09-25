@@ -22,7 +22,7 @@ struct HomeView: View {
                 
                 
                 //all coins view
-                AllCoinsView()
+                AllCoinsView(viewModel: viewModel)
                 
                 
                 

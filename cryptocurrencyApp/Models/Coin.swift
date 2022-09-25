@@ -13,7 +13,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Coin: Codable {
+struct Coin: Codable , Identifiable {
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
@@ -31,6 +31,8 @@ struct Coin: Codable {
     let priceChangePercentage24HInCurrency: Double?
 
     enum CodingKeys: String, CodingKey {
+//        var id: ObjectIdentifier
+        
         case id, symbol, name, image
         case currentPrice = "current_price"
         case marketCap = "market_cap"
