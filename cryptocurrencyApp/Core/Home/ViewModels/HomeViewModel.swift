@@ -30,8 +30,17 @@ class HomeViewModel: ObservableObject{
             }
             
             guard let data = data else{return }
-            print("Debug: data \(data)")
-        }
+//            let dataAsString = String(data: data, encoding: .utf8)
+//            print("Debug: data \(dataAsString)")
+            
+            do {
+                let coins = try JSONDecoder().decode([Coin].self, from : data)
+                print("Debug: coins \(coins)")
+            } catch let error {
+                print("debug: failure  to decode with error: \(error)")
+            }
+            
+        }.resume()
 
     }
     
