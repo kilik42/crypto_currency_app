@@ -38,7 +38,11 @@ class HomeViewModel: ObservableObject{
             
             do {
                 let coins = try JSONDecoder().decode([Coin].self, from : data)
-                self.coins = coins
+//                self.coins = coins
+                DispatchQueue.main.async{
+                    self.coins = coins
+                    self.configureTopMovingCoins()
+                }// so it is on the main thread not the back ground thread
             } catch let error {
                 print("debug: failure  to decode with error: \(error)")
             }
@@ -50,6 +54,8 @@ class HomeViewModel: ObservableObject{
     
     func configureTopMovingCoins(){
         let topMovers = coins.sorted(by: {$0.priceChangePercentage24H > $1.priceChangePercentage24H})
+        
+        self.topMovingCoins = Array(topMovers.prefix(5))
     }
     
     

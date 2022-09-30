@@ -17,8 +17,8 @@ struct TopMoversView: View {
             
             ScrollView(.horizontal){
                 HStack(spacing: 16){
-                    ForEach(0 ..< 5, id: \.self){ _ in
-                        TopMoverItemView()
+                    ForEach(viewModel.topMovingCoins){ coin in
+                        TopMoverItemView(coin: coin)
                     }
                 }
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopMoverItemView: View {
+    let coin: Coin
     var body: some View {
         VStack(alignment: .leading, spacing: 4){
             //image
@@ -44,8 +45,8 @@ struct TopMoverItemView: View {
     }
 }
 
-struct TopMoverItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TopMoverItemView()
-    }
-}
+//struct TopMoverItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TopMoverItemView()
+//    }
+//}
